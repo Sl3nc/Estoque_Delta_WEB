@@ -1,25 +1,28 @@
-import logo from './logo.svg';
+import { ProductCard } from './components/ProductCard';
+import { loadPosts } from './utils/load_posts';
+import { Component } from 'react';
 import './App.css';
+import { Post } from './components/posts/Posts';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  state = {
+    posts: []
+  };
+
+  async componentDidMount() {
+    const postsAndPhotos = await loadPosts();
+    this.setState({ posts: postsAndPhotos })
+  }
+
+  render() {
+    const { posts } = this.state
+
+    return (
+      <section className='container'>
+        <Post posts = {posts}/>
+      </section>
+    );
+  }
 }
 
 export default App;
