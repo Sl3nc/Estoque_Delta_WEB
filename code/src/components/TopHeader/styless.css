@@ -1,0 +1,15 @@
+header {
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+  }
+  
+  header img{
+    width: 40%;
+  }
+  
+  nav svg{
+    cursor: pointer;
+  }

@@ -1,30 +1,24 @@
-import { getAuth, onAuthStateChanged } from "firebase/auth";
-import { Products } from '../Products'
+import { Menu } from '../Menu';
+import { SignIn } from '../SignIn';
 import { Component } from 'react';
 import './styless.css';
 
 export class Home extends Component {
     state = {
-        page: 0,
+        page: <SignIn />,
+    };
+
+    handlePage = () => {
+        this.setState({ page: <Menu /> });
     };
 
     render() {
         const { page } = this.state;
-        const auth = getAuth();
-
         return (
-            <h1>adasd</h1>
+            <div className='menu-container'>
+                {page}
+                <button onClick={this.handlePage}>Troca</button>
+            </div>
         );
-        // onAuthStateChanged(auth, (user) => {
-        //     if (user) {
-        //         // User is signed in, see docs for a list of available properties
-        //         // https://firebase.google.com/docs/reference/js/auth.user
-        //         const uid = user.uid;
-        //         // ...
-        //     } else {
-        //         // User is signed out
-        //         // ...
-        //     }
-        // });
     }
 }
