@@ -24,7 +24,7 @@ export class Home extends Component {
           <img src="./estoque_delta_hori.png" alt="logo" />
           <nav>
             <IconContext.Provider value={{ color: "#0597F2", size:"4em"}}>
-              <FaCircleUser />
+              <FaCircleUser onClick={()=>{console.log('oi')}}/>
            </IconContext.Provider>
           </nav>
         </header>
