@@ -1,6 +1,13 @@
-export const ProductCard = ({ id, title, body }) => (
-    <div className={id}>
-        <h1>{title}</h1>
-        <p>{body}</p>
+import './styless.css';
+
+export const ProductCard = ({ cover, title, body }) => (
+    <div className="post">
+        <img src={cover} alt={title} />
+        <div className="post-content">
+            <h2>
+                {title}
+            </h2>
+            <p>{body}</p>
+        </div>
     </div>
 );

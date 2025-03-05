@@ -1,7 +1,9 @@
+import { Post } from '../../components/posts/Posts';
 import { loadPosts } from '../../utils/load_posts';
+import { FaCircleUser, FaRegCircleUser } from "react-icons/fa6";
+import { IconContext } from "react-icons";
 import { Component } from 'react';
 import './styles.css';
-import { Post } from '../../components/posts/Posts';
 
 export class Home extends Component {
   state = {
@@ -17,9 +19,20 @@ export class Home extends Component {
     const { posts } = this.state
 
     return (
-      <section className='container'>
-        <Post posts = {posts}/>
-      </section>
+      <>
+        <header>
+          <img src="./estoque_delta_hori.png" alt="logo" />
+          <nav>
+            <IconContext.Provider value={{ color: "#0597F2", size:"4em"}}>
+              <FaCircleUser />
+           </IconContext.Provider>
+          </nav>
+        </header>
+
+        <section className='container'>
+          <Post posts={posts} />
+        </section>
+      </>
     );
   }
 }
