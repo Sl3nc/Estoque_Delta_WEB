@@ -1,4 +1,4 @@
-import { Post } from '../posts/Posts';
+import { History } from '../History';
 import { loadPosts } from '../../utils/load_posts';
 import { Component } from 'react';
 
@@ -19,7 +19,7 @@ export class Profile extends Component {
 
     return (
       <section className='container'>
-        <h1>Perfil</h1>
+        <History posts={posts} />
       </section>
     );
   }

@@ -1,7 +1,7 @@
 import { ProductCard } from "../ProductCard";
 import './styless.css';
 
-export const Post = ({ posts }) => (
+export const Product = ({ posts }) => (
     <div className="posts">
         {posts.map(post => (
             <ProductCard

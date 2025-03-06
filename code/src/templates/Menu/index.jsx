@@ -1,16 +1,16 @@
 import { useState } from 'react';
 
 import { TopHeader } from '../../components/TopHeader';
-import { Products } from '../../components/Products'
+import { Service } from '../../components/Service'
 import { Profile } from '../../components/Profile'
 import './styless.css';
 
 export const Menu = () => {
-    const [MenuPage, setMenuPage] = useState(<Products />);
+    const [MenuPage, setMenuPage] = useState(<Service />);
     const [pageControl, setPageControl] = useState(true)
 
     const handleChange = () => {
-        pageControl != true ? setMenuPage(<Products/>) : setMenuPage(<Profile/>);
+        pageControl != true ? setMenuPage(<Service/>) : setMenuPage(<Profile/>);
         setPageControl(!pageControl)
     };
 

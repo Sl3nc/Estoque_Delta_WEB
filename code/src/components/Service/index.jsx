@@ -1,10 +1,10 @@
-import { Post } from '../posts/Posts';
+import { Product } from '../Product';
 import { loadPosts } from '../../utils/load_posts';
 import { Component } from 'react';
 
 import './styless.css';
 
-export class Products extends Component {
+export class Service extends Component {
   state = {
     posts: [],
   };
@@ -19,7 +19,7 @@ export class Products extends Component {
 
     return (
       <section className='container'>
-        <Post posts={posts} />
+        <Product posts={posts} />
       </section>
     );
   }
