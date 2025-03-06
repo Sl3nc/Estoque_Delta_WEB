@@ -6,17 +6,18 @@ import { Profile } from '../../components/Profile'
 import './styless.css';
 
 export const Menu = () => {
-    const [currentMenuPage, setMenuPage] = useState(<Products />);
+    const [MenuPage, setMenuPage] = useState(<Products />);
+    const [pageControl, setPageControl] = useState(true)
 
     const handleChange = () => {
-        setMenuPage(<Profile />)
-        // {currentMenuPage.name != Profile.name && setMenuPage(<Products/>)}
+        pageControl != true ? setMenuPage(<Products/>) : setMenuPage(<Profile/>);
+        setPageControl(!pageControl)
     };
 
     return (
         <div>
             <TopHeader onClick={handleChange} />
-            {currentMenuPage}
+            {MenuPage}
         </div>
     );
 };

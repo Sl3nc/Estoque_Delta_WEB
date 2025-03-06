@@ -5,18 +5,19 @@ import './styless.css';
 
 export class Home extends Component {
     state = {
-        page: <SignIn />,
+        login: false,
     };
 
     handlePage = () => {
-        this.setState({ page: <Menu /> });
+        this.setState({ login: true });
     };
 
     render() {
-        const { page } = this.state;
+        const { login } = this.state;
         return (
             <div className='menu-container'>
-                {page}
+                {login === false && <SignIn />}
+                {login === true && <Menu />}
                 <button onClick={this.handlePage}>Troca</button>
             </div>
         );
