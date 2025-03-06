@@ -16,9 +16,8 @@ export class Home extends Component {
         const { login } = this.state;
         return (
             <div className='menu-container'>
-                {login === false && <SignIn />}
+                {login === false && <SignIn submit={this.handlePage}/>}
                 {login === true && <Menu />}
-                <button onClick={this.handlePage}>Troca</button>
             </div>
         );
     }
