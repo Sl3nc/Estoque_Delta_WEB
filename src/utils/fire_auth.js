@@ -1,1 +1,0 @@
-export const fireAuth = () => ( true == true ? '/' : '/signIn');

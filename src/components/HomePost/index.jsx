@@ -4,7 +4,7 @@ import { Component } from 'react';
 
 import './styless.css';
 
-export class Service extends Component {
+export class HomePost extends Component {
   state = {
     posts: [],
   };
