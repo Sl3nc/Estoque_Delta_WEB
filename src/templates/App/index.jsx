@@ -3,7 +3,7 @@ import { SignIn } from '../SignIn';
 import { Component } from 'react';
 import './styless.css';
 
-export class Home extends Component {
+export class App extends Component {
     state = {
         login: false,
     };
