@@ -18,7 +18,7 @@ export class HomePost extends Component {
     const { posts } = this.state
 
     return (
-      <section className='container'>
+      <section className='container-home'>
         <Product posts={posts} />
       </section>
     );
