@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import Modal from 'react-bootstrap/Modal';
-import Button from 'react-bootstrap/Button';
 import { ModalRequest } from '../ModalRequest';
 
 import './styless.css';
@@ -22,6 +20,9 @@ export const ProductCard = ({ cover, title, body }) => {
             <ModalRequest
                 show={show}
                 onHide={() => setShow(false)}
+                cover={cover}
+                title={title}
+                body={body}
             />
         </>
     );

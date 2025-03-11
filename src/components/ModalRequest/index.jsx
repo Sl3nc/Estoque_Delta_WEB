@@ -1,14 +1,27 @@
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
 import { FaCoins } from "react-icons/fa6";
+import { ProductSlim } from '../ProductSlim';
+import './styles.css'
 
 export function ModalRequest(props) {
     return (
         <Modal {...props} centered>
             <Modal.Header closeButton>
-                <Modal.Title>{<FaCoins/>}<br/>Solicitar produto</Modal.Title>
+                <Modal.Title >
+                    Solicitar produto
+                </Modal.Title>
+                {<FaCoins />}
             </Modal.Header>
-            <Modal.Body>Confirma a escolha do produto abaixo?</Modal.Body>
+            <Modal.Body>
+                <p className='title-body'>Confirma a escolha do produto abaixo?</p>
+                {<ProductSlim
+                    cover={props.cover}
+                    title={props.title}
+                    body={props.body}
+                />
+                }
+            </Modal.Body>
             <Modal.Footer>
                 <Button variant="secondary" onClick={props.onHide}>
                     Fechar

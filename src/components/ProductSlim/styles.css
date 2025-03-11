@@ -1,0 +1,15 @@
+.post-slim {
+    background: #fff;
+    display: flex;
+  }
+  
+  .post-slim img {
+    max-width: 30%;
+    margin:auto;
+    display: block;
+  }
+  
+  .post-slim-content {
+    padding: 2%;
+    text-align: justify;
+  }
