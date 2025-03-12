@@ -31,7 +31,7 @@ export const HomePost = () => {
       <HeaderHome searchValue={searchValue} handleChange={handleChange} />
       <div className='container-posts'>
         {filteredPosts.length > 0 && <Product posts={filteredPosts} />}
-        {filteredPosts.length === 0 && <p>Sem produtos nesse tipo =(</p>}
+        {filteredPosts.length === 0 && <h2 id='notFoundText'>Sem produtos nesse tipo =(</h2>}
       </div>
     </section>
   );

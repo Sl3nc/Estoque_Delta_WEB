@@ -1,4 +1,3 @@
-import { ToggleFilterGroup } from '../ToggleFilterGroup'
 import { ToggleButtonGroup, ToggleButton } from 'react-bootstrap'
 import './styles.css'
 
@@ -7,8 +6,11 @@ export const HeaderHome = ({ searchValue, handleChange }) => {
         <div id='headerHome'>
             <h2 id='home-title'>Produtos disponíveis</h2>
             <ToggleButtonGroup type="radio" name="options"
-                className="mb-2" size='lg'
-                id='filterGroup' value={searchValue} onChange={handleChange}>
+                className="mb-2" size='lg' id='filterGroup'
+                value={searchValue} onChange={handleChange}>
+                <ToggleButton id="tbg-check-0" value={''}>
+                    Todos
+                </ToggleButton>
                 <ToggleButton id="tbg-check-1" value={'qui'}>
                     Refrigerante
                 </ToggleButton>
