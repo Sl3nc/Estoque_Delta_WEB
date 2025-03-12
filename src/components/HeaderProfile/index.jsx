@@ -3,7 +3,7 @@ import { IconContext } from "react-icons";
 import { timeGreeting } from '../../utils/timeGreeting';
 import './styles.css';
 
-export const Greeting = () => (
+export const HeaderProfile = () => (
     <div className='greeting'>
         <h2 id='text'>{timeGreeting()}, Usuário</h2>
         <div>

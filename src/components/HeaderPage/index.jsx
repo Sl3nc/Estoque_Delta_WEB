@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom';
 import { FaCircleUser, FaRegCircleUser } from "react-icons/fa6";
 import { IconContext } from "react-icons";
 
-export const TopHeader = () => {
+export const HeaderPage = () => {
     const { pathname } = useLocation();
     return (
         <header>

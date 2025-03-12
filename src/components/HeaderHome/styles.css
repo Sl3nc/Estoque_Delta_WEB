@@ -1,0 +1,10 @@
+#headerHome{
+    text-align: center;
+    padding: 1.5%;
+    background-color: rgba(0, 24, 55, 0.822);
+}
+
+#home-title{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: white;
+}

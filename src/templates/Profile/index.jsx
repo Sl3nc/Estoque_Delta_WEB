@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
-import {Greeting} from '../../components/Greeting'
-import { TopHeader } from '../../components/TopHeader';
+import { HeaderProfile } from '../../components/HeaderProfile'
+import { HeaderPage } from '../../components/HeaderPage';
 import { ProfilePost } from '../../components/ProfilePost'
 import { useNavigate } from 'react-router-dom';
 
@@ -10,15 +10,15 @@ export const Profile = () => {
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (false == true){
+        if (false == true) {
             navigate('/signIn');
         }
     });
 
     return (
         <div>
-            <TopHeader />
-            <Greeting/>
+            <HeaderPage />
+            <HeaderProfile />
             <ProfilePost />
         </div>
     );

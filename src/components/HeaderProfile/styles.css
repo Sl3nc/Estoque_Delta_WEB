@@ -2,10 +2,13 @@
     display: flex;
     justify-content: center;
     padding: 2%;
+    background-color: rgba(0, 24, 55, 0.822);
 }
 
 .greeting #text{
     text-align: center;
+    color: white;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 #exit_btn{
