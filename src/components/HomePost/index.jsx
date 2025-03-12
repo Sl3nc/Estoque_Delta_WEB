@@ -7,55 +7,31 @@ import { HeaderHome } from '../HeaderHome';
 
 export const HomePost = () => {
   const [posts, setPosts] = useState([]);
-  const [allPosts, setAllPosts] = useState([]);
-  const [page, setPage] = useState(0);
-  const [postsPerPage] = useState(2);
   const [searchValue, setSearchValue] = useState('');
 
-  const handleLoadPosts = useCallback(async (page, postsPerPage) => {
+  const handleLoadPosts = useCallback(async () => {
     const postsAndPhotos = await loadPosts();
-
-    setPosts(postsAndPhotos.slice(page, postsPerPage));
-    setAllPosts(postsAndPhotos);
+    setPosts(postsAndPhotos);
   }, []);
 
   useEffect(() => {
-    handleLoadPosts(0, postsPerPage);
-  }, [handleLoadPosts, postsPerPage]);
+    handleLoadPosts();
+  }, [handleLoadPosts]);
 
+  const handleChange = (value) => setSearchValue(value);
 
-  // async componentDidMount() {
-  //   const postsAndPhotos = await loadPosts();
-  //   this.setState({ posts: postsAndPhotos })
-  // }
-
-  const loadMorePosts = () => {
-    const nextPage = page + postsPerPage;
-    const nextPosts = allPosts.slice(nextPage, nextPage + postsPerPage);
-    posts.push(...nextPosts);
-
-    setPosts(posts);
-    setPage(nextPage);
-  };
-
-  const handleChange = (e) => {
-    const { value } = e.target;
-    setSearchValue(value);
-  };
-
-  const noMorePosts = page + postsPerPage >= allPosts.length;
   const filteredPosts = searchValue
-    ? allPosts.filter((post) => {
+    ? posts.filter((post) => {
       return post.title.toLowerCase().includes(searchValue.toLowerCase());
     })
     : posts;
 
-
   return (
     <section className='container-home'>
-        <HeaderHome />
+      <HeaderHome searchValue={searchValue} handleChange={handleChange} />
       <div className='container-posts'>
-      <Product posts={posts} />
+        {filteredPosts.length > 0 && <Product posts={filteredPosts} />}
+        {filteredPosts.length === 0 && <p>Sem produtos nesse tipo =(</p>}
       </div>
     </section>
   );
