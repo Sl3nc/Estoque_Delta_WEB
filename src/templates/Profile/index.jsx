@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-
+import {Greeting} from '../../components/Greeting'
 import { TopHeader } from '../../components/TopHeader';
 import { ProfilePost } from '../../components/ProfilePost'
 import { useNavigate } from 'react-router-dom';
@@ -18,6 +18,7 @@ export const Profile = () => {
     return (
         <div>
             <TopHeader />
+            <Greeting/>
             <ProfilePost />
         </div>
     );

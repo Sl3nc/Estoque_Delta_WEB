@@ -18,7 +18,7 @@ export class ProfilePost extends Component {
     const { posts } = this.state
 
     return (
-      <section className='container'>
+      <section className='container-profile'>
         <History posts={posts} />
       </section>
     );

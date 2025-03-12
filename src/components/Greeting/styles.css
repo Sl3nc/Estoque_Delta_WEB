@@ -1,0 +1,19 @@
+.greeting{
+    display: flex;
+    justify-content: center;
+    padding: 2%;
+}
+
+.greeting #text{
+    text-align: center;
+}
+
+#exit_btn{
+    position: absolute;
+    right: 0;
+    background-color: red;
+    border-radius: 30%;
+    border: none;
+    padding: 0.5%;
+    margin-right: 20%;
+}
