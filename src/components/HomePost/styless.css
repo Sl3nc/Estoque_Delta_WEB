@@ -1,5 +1,8 @@
 .container-home {
   min-height: 100vh;
   background: rgb(109, 182, 255);
+}
+
+.container-posts{
   padding: 30px;
 }

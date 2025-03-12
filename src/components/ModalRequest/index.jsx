@@ -35,7 +35,7 @@ export function ModalRequest(props) {
             </Modal.Header>
             <Modal.Body>
                 {requestBody &&
-                    <div>
+                    <>
                         <p className='title-request'>Confirma a escolha do produto abaixo?</p>
                         {<ProductSlim
                             cover={props.cover}
@@ -43,10 +43,10 @@ export function ModalRequest(props) {
                             body={props.body}
                         />
                         }
-                    </div>
+                    </>
                 }
-                {requestBody == false &&
-                    <div>
+                {requestBody === false &&
+                    <>
                         <p className='title-request'>Escolha do produto CONFIRMADA</p>
                         <div className='content-request'>
                             <IconContext.Provider value={{ color: "#0597F2", size: "4em" }}>
@@ -54,7 +54,7 @@ export function ModalRequest(props) {
                             </IconContext.Provider>
                             <p className='warning-request'>Em caso de engano,<br />consulte a equipe responsável</p>
                         </div>
-                    </div>
+                    </>
                 }
             </Modal.Body>
             <Modal.Footer id='modal-footer'>

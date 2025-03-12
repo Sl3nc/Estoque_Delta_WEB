@@ -3,7 +3,6 @@ import { useNavigate } from 'react-router-dom';
 
 import { HeaderPage } from '../../components/HeaderPage';
 import { HomePost } from '../../components/HomePost'
-import { HeaderHome } from '../../components/HeaderHome';
 
 import './styless.css';
 
@@ -19,7 +18,6 @@ export const Home = () => {
     return (
         <>
             <HeaderPage />
-            <HeaderHome/>
             <HomePost />
         </>
     );

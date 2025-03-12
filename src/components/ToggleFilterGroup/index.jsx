@@ -7,8 +7,9 @@ export const ToggleFilterGroup = () => {
     const handleChange = (val) => setValue(val);
 
     return (
-        <ToggleButtonGroup type="checkbox" className="mb-2" size='lg'
-            id='filterGroup' value={value} onChange={handleChange}>
+        <ToggleButtonGroup type="radio" name="options" 
+            className="mb-2" size='lg'
+                id='filterGroup' value={value} onChange={handleChange}>
             <ToggleButton id="tbg-check-1" value={'soda'}>
                 Refrigerante
             </ToggleButton>
