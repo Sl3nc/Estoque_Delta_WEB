@@ -1,22 +1,27 @@
 .container-modal{
-    display: flex;
-    justify-content: center;
     align-items: center;
 }
 
 .modal-header{
-    display: flex;
-    align-items: center;
     flex-direction: column-reverse;
 }
 
-.modal-footer{
+#modal-footer{
     display: flex;
     justify-content: space-evenly;
 }
 
-.title-body{
+.title-request{
     font-size: x-large;
     text-align: center;
     text-decoration: underline;
+}
+
+.content-request{
+    font-size: large;
+    text-align: center;
+}
+
+.warning-request{
+    padding-top: 3%;
 }
