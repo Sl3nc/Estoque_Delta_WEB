@@ -1,14 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import './styles/global.css';
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
+
 import { SignIn } from './templates/SignIn';
 import { Home } from './templates/Home';
 import { Profile } from './templates/Profile';
+import { Page404 } from './templates/Page404';
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { Page404 } from './templates/page404';
+
+import './styles/global.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

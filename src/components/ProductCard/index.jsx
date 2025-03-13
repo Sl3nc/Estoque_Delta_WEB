@@ -1,28 +1,31 @@
 import { useState } from 'react';
 import { ModalRequest } from '../ModalRequest';
+import { Card } from 'react-bootstrap';
 
 import './styless.css';
 
-export const ProductCard = ({ cover, title, body }) => {
+export const ProductCard = ({ image, title, price, amount, type }) => {
     const [show, setShow] = useState(false);
 
     return (
         <>
-            <div className="post" onClick={() => setShow(true)}>
-                <img src={cover} alt={title} />
-                <div className="post-content">
-                    <h2>
-                        {title}
-                    </h2>
-                    <p>{body}</p>
-                </div>
-            </div>
+            <Card style={{ width: '18rem' }} className="post" 
+                onClick={() => setShow(true)}>
+                <Card.Img variant="top" alt={title}
+                    src={image != '' ? image: './logo192.png'} />
+                <Card.Body>
+                    <Card.Title>{title}</Card.Title>
+                    <Card.Text>
+                        R$ {price}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
             <ModalRequest
                 show={show}
                 onHide={() => setShow(false)}
-                cover={cover}
+                cover={image}
                 title={title}
-                body={body}
+                body={price}
             />
         </>
     );

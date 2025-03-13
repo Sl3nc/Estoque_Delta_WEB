@@ -1,17 +1,25 @@
 import { Product } from '../Product';
 import { loadPosts } from '../../utils/load_posts';
+import { HeaderHome } from '../HeaderHome';
+
 import { useState, useCallback, useEffect } from 'react';
 
 import './styless.css';
-import { HeaderHome } from '../HeaderHome';
+import { products_firestore } from '../../utils/products_firestore';
 
 export const HomePost = ({ uid }) => {
   const [posts, setPosts] = useState([]);
   const [searchValue, setSearchValue] = useState('');
+  const [statusText, setStatusText] = useState('Carregando produtos...')
 
   const handleLoadPosts = useCallback(async () => {
-    const postsAndPhotos = await loadPosts();
-    setPosts(postsAndPhotos);
+    const products = await products_firestore();
+    console.log({...products});
+    setPosts(products);
+    setStatusText('Sem produtos nesse tipo =(')
+
+    // const postsAndPhotos = await loadPosts();
+    // setPosts(postsAndPhotos);
   }, []);
 
   useEffect(() => {
@@ -31,7 +39,7 @@ export const HomePost = ({ uid }) => {
       <HeaderHome searchValue={searchValue} handleChange={handleChange} />
       <div className='container-posts'>
         {filteredPosts.length > 0 && <Product posts={filteredPosts} />}
-        {filteredPosts.length === 0 && <h2 id='notFoundText'>Sem produtos nesse tipo =(</h2>}
+        {filteredPosts.length === 0 && <h2 id='notFoundText'>{statusText}</h2>}
       </div>
     </section>
   );

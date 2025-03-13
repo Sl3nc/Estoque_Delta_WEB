@@ -7,9 +7,11 @@ export const Product = ({ posts }) => (
         {posts.map(post => (
             <ProductCard
                 key={post.id}
-                cover={'./logo192.png'}
+                image={post.image}
                 title={post.title}
-                body={post.body}
+                price={post.price}
+                amount={post.amount}
+                type={post.type}
             />
         ))}
     </div>
