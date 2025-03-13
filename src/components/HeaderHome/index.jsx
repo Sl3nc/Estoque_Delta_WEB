@@ -11,7 +11,7 @@ export const HeaderHome = ({ searchValue, handleChange }) => {
                 <ToggleButton id="tbg-check-0" value={''}>
                     Todos
                 </ToggleButton>
-                <ToggleButton id="tbg-check-1" value={'qui'}>
+                <ToggleButton id="tbg-check-1" value={'soda'}>
                     Refrigerante
                 </ToggleButton>
                 <ToggleButton id="tbg-check-2" value={'juice'}>

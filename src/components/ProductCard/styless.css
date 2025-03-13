@@ -9,7 +9,8 @@
   }
   
   .post img {
-    max-width: 100%;
+    max-width: 200px;
+    max-height: 200px;
     margin:auto;
     display: block;
   }

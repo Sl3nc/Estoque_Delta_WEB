@@ -4,7 +4,7 @@ import { Card } from 'react-bootstrap';
 
 import './styless.css';
 
-export const ProductCard = ({ image, title, price, amount, type }) => {
+export const ProductCard = ({ image, title, price, amount }) => {
     const [show, setShow] = useState(false);
 
     return (

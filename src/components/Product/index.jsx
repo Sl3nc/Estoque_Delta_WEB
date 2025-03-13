@@ -11,7 +11,6 @@ export const Product = ({ posts }) => (
                 title={post.title}
                 price={post.price}
                 amount={post.amount}
-                type={post.type}
             />
         ))}
     </div>

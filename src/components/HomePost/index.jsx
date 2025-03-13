@@ -30,7 +30,7 @@ export const HomePost = ({ uid }) => {
 
   const filteredPosts = searchValue
     ? posts.filter((post) => {
-      return post.title.toLowerCase().includes(searchValue.toLowerCase());
+      return post.type.toLowerCase().includes(searchValue.toLowerCase());
     })
     : posts;
 
