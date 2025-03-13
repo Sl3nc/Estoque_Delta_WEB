@@ -1,8 +1,14 @@
-.form {
-    margin: 5% 30% auto;
-    padding: 2% 2% 5%;
+#sectionForm{
+    text-align: center;
+}
+
+#signForm {
+    display: inline-block;
+    margin: 5%;
+    padding: 2%;
     background-color: white;
     border-radius: 10%;
+    text-align: left;
 }
 
 input[type=text],

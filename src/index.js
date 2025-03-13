@@ -8,6 +8,7 @@ import { Profile } from './templates/Profile';
 
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { Page404 } from './templates/page404';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -18,7 +19,7 @@ root.render(
         <Route path='/' element={<Home />} />
         <Route path='/signIn' element={<SignIn />} />
         <Route path='/profile' element={<Profile />} />
-        <Route path='*' element={<Home />} />
+        <Route path='*' element={<Page404 />} />
       </Routes>
     </BrowserRouter>
   </React.StrictMode>

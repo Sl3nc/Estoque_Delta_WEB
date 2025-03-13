@@ -7,11 +7,11 @@ export const HeaderProfile = () => (
     <div className='greeting'>
         <h2 id='text'>{timeGreeting()}, Usuário</h2>
         <div>
-            <button id='exit_btn'>
+            <a id='exit_btn' href='/signIn'>
                 <IconContext.Provider value={{ color: "white", size: "2em" }}>
                     <MdExitToApp />
                 </IconContext.Provider>
-            </button>
+            </a>
         </div>
     </div>
 )

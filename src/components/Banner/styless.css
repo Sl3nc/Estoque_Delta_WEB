@@ -2,12 +2,13 @@
     align-items: center;
     text-align: center;
     background-color: white;
-    padding: 5% 2% 2%;
+    padding: 2%;
 }
 
 .title{
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: xx-large;
+    margin-bottom: 0;
 }
 
 .logo{
