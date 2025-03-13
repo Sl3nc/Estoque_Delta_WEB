@@ -5,7 +5,7 @@ import { useState, useCallback, useEffect } from 'react';
 import './styless.css';
 import { HeaderHome } from '../HeaderHome';
 
-export const HomePost = () => {
+export const HomePost = ({ uid }) => {
   const [posts, setPosts] = useState([]);
   const [searchValue, setSearchValue] = useState('');
 

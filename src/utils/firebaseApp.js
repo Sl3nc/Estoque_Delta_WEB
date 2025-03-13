@@ -1,4 +1,3 @@
-import { getFirestore } from "firebase/firestore";
 import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
@@ -17,6 +16,4 @@ const firebaseConfig = {
 // messagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
 // appId: process.env.FIREBASE_API_ID
 
-const app = initializeApp(firebaseConfig);
-
-export const db = getFirestore(app);
+export const app = initializeApp(firebaseConfig);
