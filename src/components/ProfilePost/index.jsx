@@ -1,26 +1,28 @@
 import { History } from '../History';
-import { loadPosts } from '../../utils/load_posts';
-import { Component } from 'react';
+import { history_firestore } from '../../utils/history_firestore';
+import { useState, useCallback, useEffect } from 'react';
 
 import './styless.css';
 
-export class ProfilePost extends Component {
-  state = {
-    posts: [],
-  };
+export const ProfilePost = ({ uid }) => {
+  const [posts, setPosts] = useState([]);
+  const [statusText, setStatusText] = useState('Carregando histórico...')
 
-  async componentDidMount() {
-    const postsAndPhotos = await loadPosts();
-    this.setState({ posts: postsAndPhotos })
-  }
+  const handleLoadPosts = useCallback(async () => {
+    const history = await history_firestore(uid);
+    console.log({ ...history });
+    setPosts(history);
+    setStatusText('Sem histórico de produtos comprados (～￣▽￣)～')
+  }, []);
 
-  render() {
-    const { posts } = this.state
+  useEffect(() => {
+    handleLoadPosts();
+  }, [handleLoadPosts]);
 
-    return (
-      <section className='container-profile'>
-        <History posts={posts} />
-      </section>
-    );
-  }
+  return (
+    <section className='container-profile'>
+      <History posts={posts} />
+      {posts.length === 0 && <h2 className='notFoundText'>{statusText}</h2>}
+    </section>
+  );
 }

@@ -13,7 +13,7 @@ export const Profile = () => {
     const navigate = useNavigate();
     const [uid, setUid] = useState();
 
-    const handleUid = useCallback(() => {
+    const handleUid = useCallback(async () => {
         const auth = getAuth();
         onAuthStateChanged(auth, (user) => {
             if (user) {
@@ -24,7 +24,7 @@ export const Profile = () => {
                 });
             }
         });
-    }, []);
+    }, [navigate]);
 
     useEffect(() => {
         handleUid();
@@ -33,8 +33,8 @@ export const Profile = () => {
     return (
         <div>
             <HeaderPage />
-            <HeaderProfile uid={uid}/>
-            <ProfilePost uid={uid}/>
+            {uid !== undefined && <HeaderProfile uid={uid} />}
+            {uid !== undefined && <ProfilePost uid={uid} />}
         </div>
     );
 };

@@ -1,4 +1,3 @@
-import { ModalRequest } from "../ModalRequest";
 import { ProductCard } from "../ProductCard";
 import './styless.css';
 

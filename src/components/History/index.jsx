@@ -6,8 +6,9 @@ export const History = ({ posts }) => (
         {posts.map(post => (
             <HistoryCard
                 key={post.id}
-                title={post.title}
-                body={post.body}
+                title={post.productName}
+                price={post.productPrice}
+                purchaseDateTime={post.purchaseDateTime}
             />
         ))}
     </div>

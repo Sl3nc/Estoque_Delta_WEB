@@ -21,7 +21,7 @@ export const Home = () => {
                 });
             }
         });
-    }, []);
+    }, [navigate]);
 
     useEffect(() => {
         handleUid();
@@ -30,7 +30,7 @@ export const Home = () => {
     return (
         <>
             <HeaderPage />
-            <HomePost uid={uid} />
+            {uid !== undefined && <HomePost uid={uid} />}
         </>
     );
 };

@@ -1,5 +1,4 @@
 import { Product } from '../Product';
-import { loadPosts } from '../../utils/load_posts';
 import { HeaderHome } from '../HeaderHome';
 
 import { useState, useCallback, useEffect } from 'react';
@@ -17,9 +16,6 @@ export const HomePost = ({ uid }) => {
     console.log({...products});
     setPosts(products);
     setStatusText('Sem produtos nesse tipo =(')
-
-    // const postsAndPhotos = await loadPosts();
-    // setPosts(postsAndPhotos);
   }, []);
 
   useEffect(() => {
@@ -39,7 +35,7 @@ export const HomePost = ({ uid }) => {
       <HeaderHome searchValue={searchValue} handleChange={handleChange} />
       <div className='container-posts'>
         {filteredPosts.length > 0 && <Product posts={filteredPosts} />}
-        {filteredPosts.length === 0 && <h2 id='notFoundText'>{statusText}</h2>}
+        {filteredPosts.length === 0 && <h2 className='notFoundText'>{statusText}</h2>}
       </div>
     </section>
   );

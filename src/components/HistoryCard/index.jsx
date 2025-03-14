@@ -1,15 +1,30 @@
-import {Toast} from 'react-bootstrap';
+import { Toast, Card } from 'react-bootstrap';
+import { FaDollarSign } from "react-icons/fa6";
+import { IconContext } from "react-icons";
 import './styless.css';
 
-export const HistoryCard = ({ title, body }) => (
-    <div className="post-history">
-        <Toast>
-            <Toast.Header closeButton={false}>
-                <img src="holder.js/20x20?text=%20" className="rounded me-2" alt="" />
-                <strong className="me-auto">{title}</strong>
-                <small>11 mins ago</small>
-            </Toast.Header>
-            <Toast.Body>{body}</Toast.Body>
-        </Toast>
-    </div>
-);
+export const HistoryCard = ({ title, price, purchaseDateTime }) => {
+    const date = purchaseDateTime.toDate();
+    const formattedTime = date.toLocaleDateString();
+
+    return (
+        <div className="post-history">
+                    {/* <IconContext.Provider value={{ color: "#0597F2", size: "1em" }}>
+                        {<FaDollarSign />}
+                    </IconContext.Provider> */}
+            <Card>
+                <Card.Header>
+                    <span className='dateHistory'>{formattedTime}</span>
+                </Card.Header>
+                <Card.Body>
+                    <Card.Title>
+                        <strong className="me-auto">{title}</strong>
+                    </Card.Title>
+                    <Card.Text>
+                        R$ {price}
+                    </Card.Text>
+                </Card.Body>
+            </Card>
+        </div>
+    )
+};

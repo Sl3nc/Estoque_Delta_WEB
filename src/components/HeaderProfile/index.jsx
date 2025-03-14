@@ -1,11 +1,15 @@
 import { MdExitToApp } from 'react-icons/md';
 import { IconContext } from "react-icons";
-import { timeGreeting } from '../../utils/timeGreeting';
+import { time_greeting } from '../../utils/time_greeting';
 import { getAuth, signOut } from "firebase/auth";
 import './styles.css';
 import { useNavigate } from 'react-router-dom';
+import { user_firestore } from '../../utils/user_firestore';
+import { useState, useCallback, useEffect } from 'react';
 
-export const HeaderProfile = () => {
+export const HeaderProfile = ({uid}) => {
+    const [nameUser, setNameUser] = useState('');
+    const [greeting, setGreeting] = useState('');
     const navigate = useNavigate();
 
     const signOutFirebase = (event) => {
@@ -18,9 +22,20 @@ export const HeaderProfile = () => {
         });
     }
 
+    const handleNameUser = useCallback( () => {
+        const userStore = user_firestore(uid);
+        console.log(userStore);
+        setNameUser(userStore);
+      }, []);
+    
+      useEffect(() => {
+        setGreeting(time_greeting());
+        setNameUser(user_firestore(uid));
+      }, [handleNameUser, time_greeting]);
+
     return (
         <div className='greeting'>
-            <h2 id='text'>{timeGreeting()}, Usuário</h2>
+            <h2 id='text'>{greeting}, {nameUser}</h2>
             <div>
                 <a id='exit_btn' href='/signIn' onClick={signOutFirebase}>
                     <IconContext.Provider value={{ color: "white", size: "2em" }}>
