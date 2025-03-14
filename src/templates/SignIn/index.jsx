@@ -21,7 +21,7 @@ export const SignIn = () => {
         navigate('/')
       }
     });
-  }, [navigate]);
+  }, []);
 
   useEffect(() => {
     signInCheck();
