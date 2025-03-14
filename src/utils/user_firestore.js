@@ -2,7 +2,7 @@ import { app } from './firebaseApp';
 import { getFirestore, doc, getDoc } from "firebase/firestore";
 
 export const user_firestore = async (uid) => {
-    if (uid == undefined){
+    if (uid === undefined){
         return 'Usuário'
     }
     const db = getFirestore(app);

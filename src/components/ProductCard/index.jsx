@@ -12,7 +12,7 @@ export const ProductCard = ({ id, image, title, price, amount, requestMethod }) 
             <Card style={{ width: '18rem' }} className="post"
                 onClick={() => setShow(true)}>
                 <Card.Img variant="top" alt={title}
-                    src={image != '' ? image : './logo192.png'} />
+                    src={image !== '' ? image : './logo192.png'} />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>

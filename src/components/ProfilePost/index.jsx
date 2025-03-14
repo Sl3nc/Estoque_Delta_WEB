@@ -13,7 +13,7 @@ export const ProfilePost = ({ uid }) => {
     console.log({ ...history });
     setPosts(history);
     setStatusText('Sem histórico de produtos comprados (～￣▽￣)～')
-  }, []);
+  }, [uid]);
 
   useEffect(() => {
     handleLoadPosts();

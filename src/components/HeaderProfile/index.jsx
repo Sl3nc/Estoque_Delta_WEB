@@ -1,11 +1,16 @@
+import { useState, useCallback, useEffect } from 'react';
+
+import { useNavigate } from 'react-router-dom';
+
 import { MdExitToApp } from 'react-icons/md';
 import { IconContext } from "react-icons";
-import { time_greeting } from '../../utils/time_greeting';
+
 import { getAuth, signOut } from "firebase/auth";
-import './styles.css';
-import { useNavigate } from 'react-router-dom';
+
+import { time_greeting } from '../../utils/time_greeting';
 import { user_firestore } from '../../utils/user_firestore';
-import { useState, useCallback, useEffect } from 'react';
+
+import './styles.css';
 
 export const HeaderProfile = ({uid}) => {
     const [nameUser, setNameUser] = useState('');
@@ -26,12 +31,12 @@ export const HeaderProfile = ({uid}) => {
         const userStore = user_firestore(uid);
         console.log(userStore);
         setNameUser(userStore);
-      }, []);
+      }, [uid]);
     
       useEffect(() => {
         setGreeting(time_greeting());
         setNameUser(user_firestore(uid));
-      }, [handleNameUser, time_greeting]);
+      }, [handleNameUser, uid]);
 
     return (
         <div className='greeting'>

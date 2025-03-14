@@ -14,10 +14,10 @@ export function ModalRequest(props) {
     const [requestBody, setRequestBody] = useState(true)
 
     useEffect(() =>{
-        if (props.show == false){
+        if (props.show === false){
             setRequestBody(true)
         }
-    })
+    },[props.show])
 
     const handleRequest = () => {
         props.requestMethod(props.title, props.price, props.amount, props.id);
