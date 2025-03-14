@@ -24,7 +24,7 @@ export const Profile = () => {
                 });
             }
         });
-    }, [navigate]);
+    }, []);
 
     useEffect(() => {
         handleUid();
