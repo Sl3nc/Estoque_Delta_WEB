@@ -6,7 +6,7 @@ export const products_firestore = async () => {
     const db = getFirestore(app);
     const querySnapshot = await getDocs(collection(db, "products"));
     querySnapshot.forEach((doc) => {
-        products.push(doc.data());
+        products.push({id: doc.id, ...doc.data()});
     });
 
     return products

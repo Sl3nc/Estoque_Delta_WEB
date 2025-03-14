@@ -1,15 +1,15 @@
 import './styles.css';
 
-export const ProductSlim = ({ cover, title, body }) => {
+export const ProductSlim = ({ image, title, price }) => {
 
     return (
         <div className="post-slim">
-            <img src={cover} alt={title} />
+            <img src={image != '' ? image : './logo192.png'} alt={title} />
             <div className="post-slim-content">
                 <h2>
                     {title}
                 </h2>
-                <p>{body}</p>
+                <p>R$ {price}</p>
             </div>
         </div>
     );

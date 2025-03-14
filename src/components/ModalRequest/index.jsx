@@ -20,11 +20,12 @@ export function ModalRequest(props) {
     })
 
     const handleRequest = () => {
+        props.requestMethod(props.title, props.price, props.amount, props.id);
         setRequestBody(!requestBody)
     }
 
     return (
-        <Modal {...props} centered>
+        <Modal show={props.show} onHide={props.onHide} centered>
             <Modal.Header closeButton>
                 <Modal.Title >
                     Solicitar produto
@@ -38,9 +39,9 @@ export function ModalRequest(props) {
                     <>
                         <p className='title-request'>Confirma a escolha do produto abaixo?</p>
                         {<ProductSlim
-                            cover={props.cover}
+                            image={props.image}
                             title={props.title}
-                            body={props.body}
+                            price={props.price}
                         />
                         }
                     </>

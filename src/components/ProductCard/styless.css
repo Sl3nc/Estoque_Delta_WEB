@@ -1,20 +1,25 @@
 .post {
-    background: #fff;
-    transition: transform 100ms ease-in-out;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-  }
-  
-  .post:hover {
-    transform: scale(1.05);
-  }
-  
-  .post img {
-    max-width: 200px;
-    max-height: 200px;
-    margin:auto;
-    display: block;
-  }
-  
-  .post-content {
-    padding: 30px;
-  }
+  background: #fff;
+  transition: transform 100ms ease-in-out;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.post:hover {
+  transform: scale(1.05);
+}
+
+.post img {
+  max-width: 200px;
+  max-height: 200px;
+  margin: auto;
+  display: block;
+}
+
+.post-content {
+  padding: 30px;
+}
+
+.card-body .card-text {
+  display: flex;
+  justify-content: space-between;
+}

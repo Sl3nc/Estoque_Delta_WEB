@@ -8,7 +8,7 @@ export const history_firestore = async (uid) => {
     const q = query(collection(db, "history"), where("userUid", "==", uid));
     const querySnapshot = await getDocs(q);
     querySnapshot.forEach((doc) => {
-        history.push(doc.data());
+        history.push({id: doc.id, ...doc.data()});
     });
 
     return history

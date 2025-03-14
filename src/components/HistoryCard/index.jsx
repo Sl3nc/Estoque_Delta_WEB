@@ -1,6 +1,4 @@
-import { Toast, Card } from 'react-bootstrap';
-import { FaDollarSign } from "react-icons/fa6";
-import { IconContext } from "react-icons";
+import { Card } from 'react-bootstrap';
 import './styless.css';
 
 export const HistoryCard = ({ title, price, purchaseDateTime }) => {

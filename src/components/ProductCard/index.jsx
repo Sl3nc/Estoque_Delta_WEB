@@ -4,28 +4,31 @@ import { Card } from 'react-bootstrap';
 
 import './styless.css';
 
-export const ProductCard = ({ image, title, price, amount }) => {
+export const ProductCard = ({ id, image, title, price, amount, requestMethod }) => {
     const [show, setShow] = useState(false);
 
     return (
         <>
-            <Card style={{ width: '18rem' }} className="post" 
+            <Card style={{ width: '18rem' }} className="post"
                 onClick={() => setShow(true)}>
                 <Card.Img variant="top" alt={title}
-                    src={image != '' ? image: './logo192.png'} />
+                    src={image != '' ? image : './logo192.png'} />
                 <Card.Body>
                     <Card.Title>{title}</Card.Title>
                     <Card.Text>
-                        R$ {price}
+                        R$ {price}<span>|</span><span>Disponível: {amount}</span>
                     </Card.Text>
                 </Card.Body>
             </Card>
             <ModalRequest
                 show={show}
                 onHide={() => setShow(false)}
-                cover={image}
+                id={id}
+                image={image}
                 title={title}
-                body={price}
+                price={price}
+                amount={amount}
+                requestMethod={requestMethod}
             />
         </>
     );
