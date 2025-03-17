@@ -15,7 +15,7 @@ export const ProductCard = ({ id, image, title, price, amount, requestMethod }) 
                 onClick={() => { 
                     amount_firestore(id).then((result) => {
                         result !== 0 ? setShow(true) 
-                        : alert('Sem produtos disponíveis')
+                        : alert('Sem produtos disponíveis, em caso de dúvida, atualize a página')
                     }) 
                 }}>
                 <Card.Img variant="top" alt={title}
