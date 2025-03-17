@@ -9,7 +9,7 @@ export const HeaderPage = () => {
         <header>
             <img src="./estoque_delta_hori.png" alt="logo" />
             <nav>
-                <IconContext.Provider value={{ color: "#0597F2", size: "4em" }}>
+                <IconContext.Provider value={{ color: "#0597F2", size: "3.5em" }}>
                     {pathname === '/profile' && <Link to='/'><FaRegCircleUser /></Link>}
                     {pathname === '/' && <Link to='/profile'><FaCircleUser /></Link>}
                 </IconContext.Provider>

@@ -3,6 +3,7 @@
   transition: transform 100ms ease-in-out;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   cursor: pointer;
+  width: '15rem';
 }
 
 .post:hover {
@@ -14,6 +15,7 @@
   max-height: 200px;
   margin: auto;
   display: block;
+  padding: 2%;
 }
 
 .post-content {
