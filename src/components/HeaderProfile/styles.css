@@ -6,7 +6,6 @@
 }
 
 .greeting #text{
-    text-align: center;
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
@@ -18,5 +17,11 @@
     border-radius: 30%;
     border: none;
     padding: 0.5%;
-    margin-right: 20%;
+    margin-right: 5%;
 }
+
+@media screen and (max-width: 650px) {
+    .greeting {
+        justify-content: left;
+    }
+  }

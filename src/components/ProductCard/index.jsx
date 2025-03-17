@@ -11,7 +11,7 @@ export const ProductCard = ({ id, image, title, price, amount, requestMethod }) 
 
     return (
         <>
-            <Card style={{ width: '18rem' }} className="post"
+            <Card style={{ width: '15rem' }} className="post"
                 onClick={() => { 
                     amount_firestore(id).then((result) => {
                         result !== 0 ? setShow(true) 
