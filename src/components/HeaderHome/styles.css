@@ -4,6 +4,10 @@
     background-color: rgba(0, 24, 55, 0.822);
 }
 
+#headerHome p{
+    color: white;
+}
+
 #home-title{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color: white;
@@ -11,4 +15,5 @@
 
 #filterGroup{
     margin: 0.5%;
+    text-align: center;
 }
