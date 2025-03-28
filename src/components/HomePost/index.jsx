@@ -7,7 +7,7 @@ import { products_firestore } from '../../utils/products_firestore';
 import { app } from '../../utils/firebaseApp';
 
 import './styless.css';
-import { addDoc, collection, doc, getFirestore, Timestamp, updateDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getFirestore, Timestamp, updateDoc, getDoc } from 'firebase/firestore';
 
 export const HomePost = ({ uid }) => {
   const [posts, setPosts] = useState([]);
@@ -45,6 +45,14 @@ export const HomePost = ({ uid }) => {
     const toUpdateDoc = doc(db, "products", docUid);
     await updateDoc(toUpdateDoc, {
       amount: amount - 1
+    });
+
+    const docUser = doc(db, "users", uid);
+    const docSnap = await getDoc(docUser);
+    const spent = docSnap.data()['totalSpent']
+
+    await updateDoc(docUser, {
+      totalSpent: spent + price
     });
     await handleLoadPosts();
   }
