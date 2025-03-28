@@ -12,8 +12,9 @@ import { user_firestore } from '../../utils/user_firestore';
 
 import './styles.css';
 
-export const HeaderProfile = ({uid}) => {
+export const HeaderProfile = ({ uid }) => {
     const [nameUser, setNameUser] = useState('');
+    const [totalSpent, setotalSpent] = useState(0);
     const [greeting, setGreeting] = useState('');
     const navigate = useNavigate();
 
@@ -27,20 +28,27 @@ export const HeaderProfile = ({uid}) => {
         });
     }
 
-    const handleNameUser = useCallback( () => {
-        const userStore = user_firestore(uid);
-        console.log(userStore);
-        setNameUser(userStore);
-      }, [uid]);
-    
-      useEffect(() => {
+    const handleNameUser = useCallback(async () => {
+        const userData = await user_firestore(uid);
+        setotalSpent(userData.totalSpent)
+        setNameUser(userData.name);
+    }, [uid]);
+
+    useEffect(() => {
         setGreeting(time_greeting());
-        setNameUser(user_firestore(uid));
-      }, [handleNameUser, uid]);
+        handleNameUser();
+    }, [handleNameUser]);
 
     return (
         <div className='greeting'>
-            <h2 id='text'>{greeting}, {nameUser}</h2>
+            <h2 >
+                <span id='title'>{greeting}, {nameUser}</span>
+                <br />
+                <span id='subtitle'>total gasto: R$
+                    {totalSpent.toLocaleString(undefined, { minimumFractionDigits: 2 })
+                    }
+                </span>
+            </h2>
             <div>
                 <a id='exit_btn' href='/signIn' onClick={signOutFirebase}>
                     <IconContext.Provider value={{ color: "white", size: "2em" }}>

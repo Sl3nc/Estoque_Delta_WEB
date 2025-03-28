@@ -5,7 +5,12 @@
     background-color: rgba(0, 24, 55, 0.822);
 }
 
-.greeting #text{
+.greeting #subtitle{
+    color: rgb(187, 187, 187);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+.greeting #title{
     color: white;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
