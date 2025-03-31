@@ -39,7 +39,8 @@ export const HomePost = ({ uid }) => {
       productName: title,
       productPrice: price,
       purchaseDateTime: Timestamp.fromDate(new Date(Date.now())),
-      userUid: uid
+      userUid: uid,
+      productUid: docUid
     });
 
     const toUpdateDoc = doc(db, "products", docUid);
