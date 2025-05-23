@@ -53,7 +53,7 @@ export const HomePost = ({ uid }) => {
     const spent = docSnap.data()['totalSpent']
 
     await updateDoc(docUser, {
-      totalSpent: (spent + price).toFixed(2)
+      totalSpent: Math.round((spent + price) * 100) / 100
     });
     await handleLoadPosts();
   }
