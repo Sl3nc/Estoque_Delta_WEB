@@ -7,7 +7,7 @@ import { products_firestore } from '../../utils/products_firestore';
 import { app } from '../../utils/firebaseApp';
 
 import './styless.css';
-import { addDoc, collection, doc, getFirestore, Timestamp, updateDoc, getDoc } from 'firebase/firestore';
+import { addDoc, collection, doc, getFirestore, Timestamp, updateDoc, deleteDoc, getDoc } from 'firebase/firestore';
 
 export const HomePost = ({ uid }) => {
   const [posts, setPosts] = useState([]);
@@ -34,28 +34,48 @@ export const HomePost = ({ uid }) => {
     : posts;
 
   const requestMethod = async (title, price, amount, docUid) => {
-    const db = getFirestore(app);
-    await addDoc(collection(db, "history"), {
-      productName: title,
-      productPrice: price,
-      purchaseDateTime: Timestamp.fromDate(new Date(Date.now())),
-      userUid: uid,
-      productUid: docUid
-    });
+    try{
+      var error_type = 0
+      const db = getFirestore(app);
+      var addHist = await addDoc(collection(db, "history"), {
+        productName: title,
+        productPrice: price,
+        purchaseDateTime: Timestamp.fromDate(new Date(Date.now())),
+        userUid: uid,
+        productUid: docUid
+      });
 
-    const toUpdateDoc = doc(db, "products", docUid);
-    await updateDoc(toUpdateDoc, {
-      amount: amount - 1
-    });
+      
+      error_type = 1
+      var toUpdateDoc = doc(db, "products", docUid);
+      await updateDoc(toUpdateDoc, {
+        amount: amount - 1
+      });
+      
+      const docUser = doc(db, "users", uid);
+      const docSnap = await getDoc(docUser);
+      const spent = docSnap.data()['totalSpent']
+      
+      error_type = 2
+      await updateDoc(docUser, {
+        totalSpent: Math.round((spent + price) * 100) / 100
+      });
+      await handleLoadPosts();
 
-    const docUser = doc(db, "users", uid);
-    const docSnap = await getDoc(docUser);
-    const spent = docSnap.data()['totalSpent']
+      return -1
+    }catch{
+      if (error_type >= 1 && error_type !== 0){
+        await deleteDoc(addHist)
+      }
 
-    await updateDoc(docUser, {
-      totalSpent: Math.round((spent + price) * 100) / 100
-    });
-    await handleLoadPosts();
+      if (error_type >= 2 && error_type !== 0){
+        await updateDoc(toUpdateDoc, {
+          amount: amount
+        });
+      }
+
+      return error_type
+    }
   }
 
   return (

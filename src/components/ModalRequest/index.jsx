@@ -20,9 +20,15 @@ export function ModalRequest(props) {
         }
     }, [props.show])
 
-    const handleRequest = () => {
-        props.requestMethod(props.title, props.price, props.amount, props.id);
-        setRequestBody(!requestBody)
+    const handleRequest = async () => {
+        const result = await props.requestMethod(props.title, props.price, props.amount, props.id);
+
+        if (result === -1){
+            setRequestBody(!requestBody)
+        }else{
+            props.onHide()
+            alert('Falha no pedido do produto, FAVOR NOTIFICAR O SUPORTE DO ERRO TIPO: ' + result)
+        }
     }
 
     return (
