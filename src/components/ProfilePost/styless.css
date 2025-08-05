@@ -1,6 +1,5 @@
 .container-profile {
-    min-height: 100vh;
-    background: rgb(109, 182, 255);
-    padding: 30px;
-  }
-  
+  min-height: 100vh;
+  background: linear-gradient(0deg, rgba(19, 51, 90, 0.93) 0%, rgba(108, 181, 254, 1) 100%);
+  padding: 30px;
+}
