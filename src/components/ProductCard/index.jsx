@@ -11,22 +11,22 @@ export const ProductCard = ({ id, image, title, price, amount, requestMethod }) 
 
     return (
         <>
-            <Card className="post"
+            <div className="post"
                 onClick={() => { 
                     amount_firestore(id).then((result) => {
                         result !== 0 ? setShow(true) 
                         : alert('Sem produtos disponíveis, em caso de dúvida, atualize a página')
                     }) 
                 }}>
-                <Card.Img variant="top" alt={title}
+                <img alt={title}
                     src={image !== '' ? image : './no_image.png'} />
-                <Card.Body>
-                    <Card.Title>{title}</Card.Title>
-                    <Card.Text>
+                <div className='card-body'>
+                    <h4 className='card-title'>{title}</h4>
+                    <div className='card-text'>
                         R$ {price}<span>|</span><span>Disponível: {amount}</span>
-                    </Card.Text>
-                </Card.Body>
-            </Card>
+                    </div>
+                </div>
+            </div>
             <ModalRequest
                 show={show}
                 onHide={() => setShow(false)}

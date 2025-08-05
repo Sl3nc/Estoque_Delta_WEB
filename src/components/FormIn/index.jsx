@@ -43,23 +43,5 @@ export const FormIn = () => {
             </div>
             <button type='submit' onClick={handleSubmit}>Enviar</button>
         </form>
-        // <Form id='signForm'>
-        //     <Form.Group className="mb-3" controlId="formBasicEmail">
-        //         <Form.Label>Endereço de e-mail</Form.Label>
-        //         <Form.Control type="email" placeholder="Insira o e-mail"
-        //             value={email} onChange={(e) => { setEmail(e.target.value) }} />
-        //     </Form.Group>
-        //     <Form.Group className="mb-3" controlId="formBasicPassword">
-        //         <Form.Label>Senha</Form.Label>
-        //         <Form.Control type={viewPswrd ? 'text' : 'password'} placeholder="Insira a senha" size=""
-        //             value={password} onChange={(e) => { setPsswrd(e.target.value) }} />
-        //     </Form.Group>
-        //     <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        //         <Form.Check type="checkbox" label="Mostrar senha" onClick={() => { setViewPswrd(!viewPswrd) }} />
-        //     </Form.Group>
-        //     <Button variant="primary" type="submit" onClick={handleSubmit}>
-        //         Enviar
-        //     </Button>
-        // </Form>
     );
 };
