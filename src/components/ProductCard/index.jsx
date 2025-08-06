@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { Card } from 'react-bootstrap';
 
 import { ModalRequest } from '../ModalRequest';
 import { amount_firestore } from '../../utils/amount_firestore';
