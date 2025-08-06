@@ -10,6 +10,9 @@ import { Page404 } from './templates/Page404';
 
 import './styles/global.css';
 
+// Importing the Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>

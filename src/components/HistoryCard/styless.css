@@ -28,6 +28,11 @@
   padding: 2%;
 }
 
+.post-history .card-body *{
+  margin: 0;
+
+}
+
 .post-history .card-body h5{
   white-space: nowrap;
   overflow: hidden;
