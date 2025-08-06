@@ -1,19 +1,51 @@
 #headerHome{
     text-align: center;
-    padding: 1.5%;
+    padding: 2.3%;
     background-color: rgba(0, 24, 55, 0.822);
 }
 
-#headerHome p{
-    color: white;
-}
-
-#home-title{
-    font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color: white;
-}
-
 #filterGroup{
-    margin: 0.5%;
     text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.radio-btn {
+    background-color: #0D6EFD;
+    padding: 15px 20px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    user-select: none;
+    font-size: larger;
+    margin-bottom: 5px;
+}
+
+#filterGroup label:first-child {
+    border-radius: 10px 0 0 10px;
+}
+#filterGroup label:last-child {
+    border-radius: 0 10px 10px 0;
+}
+
+/* @media (max-width: 640px) {
+    #filterGroup label:nth-child(3n+1) {
+        border-radius: 10px 0 0 10px;
+    }
+
+    #filterGroup label:nth-child(3n) {
+        border-radius: 0 10px 10px 0;
+    }
+} */
+
+.radio-btn.selected,
+.radio-btn:hover {
+    background: #0A58CA;
+}
+
+.radio-btn input[type="radio"] {
+    display: none;
 }

@@ -1,13 +1,13 @@
 import { useEffect, useCallback } from 'react';
 
-import { SignInForm } from '../../components/SignInForm'
+import { FormIn } from '../../components/FormIn'
 import { Banner } from '../../components/Banner'
 
 import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 import { useLocation, useNavigate } from 'react-router-dom';
 
-import './styless.css';
+import './SignIn.css';
 
 export const SignIn = () => {
   const navigate = useNavigate();
@@ -30,9 +30,10 @@ export const SignIn = () => {
     }
   }, [signInCheck, state]);
 
-  return (<div className='container-login'>
-    <Banner />
-    <SignInForm />
-  </div>
+  return (
+    <div className='container-login'>
+      <Banner />
+      <FormIn />
+    </div>
   )
 }
