@@ -40,3 +40,9 @@
   color: #6c6c6c;
   font-weight: bold;
 }
+
+@media (max-width: 640px) {
+  .card-text {
+    font-size: smaller;
+  }
+}

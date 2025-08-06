@@ -2,7 +2,7 @@ import './styless.css';
 
 export const HistoryCard = ({ title, price, purchaseDateTime }) => {
     const date = purchaseDateTime.toDate();
-    const formattedTime = `${date.toLocaleDateString()} - ${date.toLocaleTimeString()}`;
+    const formattedTime = `${date.toLocaleDateString()} - ${date.toLocaleTimeString('pt-BR')}`;
 
     return (
         <div className="post-history">
