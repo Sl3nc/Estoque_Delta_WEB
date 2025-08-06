@@ -1,8 +1,8 @@
 .container-home {
   min-height: 100vh;
-  background: rgb(109, 182, 255);
+  background: linear-gradient(0deg, rgba(19, 51, 90, 0.93) 0%, rgba(108, 181, 254, 1) 100%);
 }
 
-.container-posts{
-  padding: 30px;
+.container-posts {
+  padding: 2% 3%;
 }

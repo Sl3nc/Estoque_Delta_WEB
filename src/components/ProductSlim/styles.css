@@ -4,12 +4,17 @@
 }
 
 .post-slim img {
-  max-width: 200px;
-  max-height: 200px;
+  max-width: 40%;
+  max-height: 40%;
   margin: auto;
   display: block;
 }
 
 .post-slim-content {
   padding: 2%;
+  max-width: 60%;
+}
+
+.post-slim h2 {
+  overflow-wrap: break-word;
 }

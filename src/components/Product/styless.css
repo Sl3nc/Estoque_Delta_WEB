@@ -1,5 +1,12 @@
 .posts {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 20px 5%;
+}
+
+
+@media (max-width: 640px) {
+  .posts {
+    grid-template-columns: repeat(2, minmax(110px, auto));
   }
+}

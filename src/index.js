@@ -3,15 +3,15 @@ import ReactDOM from 'react-dom/client';
 
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-import { SignIn } from './templates/SignIn';
+import { SignIn } from './templates/SignIn/SignIn';
 import { Home } from './templates/Home';
 import { Profile } from './templates/Profile';
 import { Page404 } from './templates/Page404';
 
+import './styles/global.css';
+
 // Importing the Bootstrap CSS
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-import './styles/global.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(

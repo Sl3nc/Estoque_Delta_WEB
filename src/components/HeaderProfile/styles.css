@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     padding: 2%;
-    background-color: rgba(0, 24, 55, 0.822);
+    background-color: rgba(0, 24, 55, 0.9);
 }
 
 .greeting #subtitle{
@@ -21,7 +21,7 @@
     background-color: red;
     border-radius: 30%;
     border: none;
-    padding: 0.5%;
+    padding: 0.5% 0.5% 0.1% 0.5%;;
     margin-right: 5%;
 }
 
